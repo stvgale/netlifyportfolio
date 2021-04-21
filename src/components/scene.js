@@ -4,12 +4,13 @@ import * as THREE from "three"
 class Scene extends React.Component {
   componentDidMount() {
     let scene = new THREE.Scene()
-
+    scene.background = new THREE.Color( 0xffffff );
     let particles
 
-    const colors = [0x37BE95, 0xF3F3F3, 0x6549C0];
 
-    this.camera = new THREE.PerspectiveCamera(75, this.mount.offsetWidth/this.mount.offsetHeight, 0.1, 1000)
+    const colors = [0x000000, 0x000000, 0x000000];
+
+    this.camera = new THREE.PerspectiveCamera(95, this.mount.offsetWidth/this.mount.offsetHeight, 0.1, 1000)
 
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(this.mount.offsetWidth, this.mount.offsetHeight)
@@ -27,8 +28,11 @@ class Scene extends React.Component {
     light.shadow.camera.bottom = -100;
     scene.add(light);
 
-    const geometry = new THREE.SphereGeometry(1, 2, 1);
-    const material = new THREE.MeshNormalMaterial( {color: 0xffff00} );
+
+    const geometry = new THREE.SphereGeometry(1.5, 3, 1);
+    const material = new THREE.MeshNormalMaterial( {
+
+				} );
     const sphere = new THREE.Mesh( geometry, material );
     scene.add( sphere );
 
@@ -37,7 +41,7 @@ class Scene extends React.Component {
   function drawParticles() {
   particles = new THREE.Group();
   scene.add(particles);
-  const geometry = new THREE.TetrahedronGeometry(5, 0);
+  const geometry = new THREE.TetrahedronGeometry(3.5, 0);
 
   for (let i = 0; i < 500; i ++) {
     const material = new THREE.MeshPhongMaterial({
@@ -82,7 +86,7 @@ class Scene extends React.Component {
 
   render() {
     return (
-      <div ref={ref => (this.mount = ref)} style={{ width: `100vw`, height: `100vh` }}></div>
+      <div ref={ref => (this.mount = ref)} style={{ position:'absolute', top:'0', width: `100vw`, height: `100vh` }}></div>
     )
   }
 }
