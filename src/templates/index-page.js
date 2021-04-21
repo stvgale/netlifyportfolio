@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Scene from '../components/scene'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
@@ -11,6 +12,7 @@ export const IndexPageTemplate = ({
   <h1>
     {title}
   </h1>
+  <Scene />
   </div>
 )
 
