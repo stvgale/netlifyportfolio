@@ -4,6 +4,7 @@ module.exports = {
     description:
       'Seattle based UX and UI designer'},
   plugins: [
+    'gatsby-plugin-scroll-reveal',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',

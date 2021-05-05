@@ -1,4 +1,6 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import "~bulma/sass/grid/columns"
+
 
 // Config vars
 // Kaldi logo brand color: #FD461E
@@ -9,6 +11,9 @@ $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
+
+
+$size-1: 5rem;
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -123,6 +128,8 @@ $menu-label-color: $white-ter
   margin: 0 1.5em 0 0;
 
 
+@import "~bulma/sass/grid/columns.sass"
+
 @import "~bulma"
 
 
@@ -138,3 +145,26 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+
+
+  // me
+
+
+.tscene h2
+  position: relative;
+  z-index: 1;
+  font-size: 60px;
+  margin-top: 150px;
+  mix-blend-mode: multiply;
+  width: 100%;
+  text-align: center;
+
+.hmcon
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background: rgb(65,119,220);
+  background: linear-gradient(90deg, rgba(65,119,220,1) 0%, rgba(129,154,246,1) 50%, rgba(183,147,231,1) 100%);
+  transition: opacity 0.75s;

@@ -8,7 +8,7 @@ class Scene extends React.Component {
     let particles
 
 
-    const colors = [0x000000, 0x000000, 0x000000];
+    const colors = [0xf0f0f0, 0x000000, 0x000000];
 
     this.camera = new THREE.PerspectiveCamera(95, this.mount.offsetWidth/this.mount.offsetHeight, 0.1, 1000)
 
@@ -16,11 +16,12 @@ class Scene extends React.Component {
     this.renderer.setSize(this.mount.offsetWidth, this.mount.offsetHeight)
     this.mount.appendChild(this.renderer.domElement)
 
-    const geometry = new THREE.SphereGeometry(1.5, 3, 1);
+    const geometry = new THREE.SphereGeometry(7, 10, 10);
     const material = new THREE.MeshNormalMaterial( {
 
 				} );
     const sphere = new THREE.Mesh( geometry, material );
+    sphere.position.set(0 , -4, 0 );
     scene.add( sphere );
 
     drawParticles();
@@ -28,10 +29,10 @@ class Scene extends React.Component {
   function drawParticles() {
   particles = new THREE.Group();
   scene.add(particles);
-  const geometry = new THREE.TetrahedronGeometry(3.5, 0);
+  const geometry = new THREE.TetrahedronGeometry(1.5, 0);
 
   for (let i = 0; i < 500; i ++) {
-    const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshNormalMaterial({
       color: colors[Math.floor(Math.random() * colors.length)],
       flatShading: THREE.FlatShading
     });
@@ -46,15 +47,15 @@ class Scene extends React.Component {
 }
 
 
-    this.camera.position.z = 5
+    this.camera.position.z = 10
 
     this.animate = function () {
       requestAnimationFrame(this.animate.bind(this))
 
-      sphere.rotation.x += 0.01
-      sphere.rotation.y += 0.01
-      particles.rotation.y += 0.001
-      particles.rotation.x += 0.0005
+      sphere.rotation.x += 0.0005
+      sphere.rotation.y += 0.0005
+      particles.rotation.y += 0.0001
+      particles.rotation.x += 0.00005
       this.renderer.render(scene, this.camera)
     }
 
@@ -73,7 +74,7 @@ class Scene extends React.Component {
 
   render() {
     return (
-      <div ref={ref => (this.mount = ref)} style={{ position:'absolute', top:'0', width: `100vw`, height: `100vh` }}></div>
+      <div ref={ref => (this.mount = ref)} style={{ position:'absolute', top:'0', width: `100vw`, height: `200vh`, zIndex: '0' }}></div>
     )
   }
 }
