@@ -18,7 +18,7 @@ export const IndexPageTemplate = ({
   <div className="tscene">
   <div className="columns">
     <div className="column is-three-fifths is-offset-one-fifth">
-      <h2 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">Nunc vitae neque sed diam volutpat luctus. Morbi scelerisque nulla vitae nulla eleifend, ac consectetur lorem tincidunt. </h2>
+      <h2 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">Seattle, WA based designer currently working at Microsoft, and enrolled in the MS Biomimicry program at ASU</h2>
     </div>
   </div>
   <Scene />
