@@ -20,10 +20,11 @@ class Fade extends React.Component {
   render() {
     return(
       <div>
-
           <div className="hmcon" style={{opacity: this.state.opacity}}>
+          <div className="container">
             This is the header
           </div>
+      </div>
 
      </div>
      )
